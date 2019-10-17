@@ -6,7 +6,7 @@
 
 React Native Fingerprint Scanner is a [React Native](http://facebook.github.io/react-native/) library for authenticating users with Fingerprint (TouchID).
 
-## Table of Contents
+## Table of Contents.
 
 - [Installation](#installation)
 - [Compatibility](#compatibility)
