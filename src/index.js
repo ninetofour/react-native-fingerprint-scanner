@@ -5,5 +5,5 @@ import release from './release';
 export default {
   authenticate,
   release,
-  isSensorAvailable,
+  isSensorAvailable
 };

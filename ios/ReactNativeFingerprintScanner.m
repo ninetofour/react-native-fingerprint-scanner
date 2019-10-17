@@ -22,6 +22,26 @@ RCT_EXPORT_METHOD(isSensorAvailable: (RCTResponseSenderBlock)callback)
         NSString *message;
 
         switch (error.code) {
+            case LAErrorAuthenticationFailed:
+                errorReason = @"AuthenticationFailed";
+                break;
+
+            case LAErrorUserCancel:
+                errorReason = @"UserCancel";
+                break;
+
+            case LAErrorUserFallback:
+                errorReason = @"UserFallback";
+                break;
+
+            case LAErrorSystemCancel:
+                errorReason = @"SystemCancel";
+                break;
+
+            case LAErrorPasscodeNotSet:
+                errorReason = @"PasscodeNotSet";
+                break;
+
             case LAErrorTouchIDNotAvailable:
                 code = @"FingerprintScannerNotAvailable";
                 message = [self getBiometryType:context];
@@ -30,6 +50,10 @@ RCT_EXPORT_METHOD(isSensorAvailable: (RCTResponseSenderBlock)callback)
             case LAErrorTouchIDNotEnrolled:
                 code = @"FingerprintScannerNotEnrolled";
                 message = [self getBiometryType:context];
+                break;
+
+            case LAErrorTouchIDLockout:
+                errorReason = @"AuthenticationLockout";
                 break;
 
             default:
