@@ -23,23 +23,28 @@ RCT_EXPORT_METHOD(isSensorAvailable: (RCTResponseSenderBlock)callback)
 
         switch (error.code) {
             case LAErrorAuthenticationFailed:
-                errorReason = @"AuthenticationFailed";
+                code = @"AuthenticationFailed";
+                message = nil;
                 break;
 
             case LAErrorUserCancel:
-                errorReason = @"UserCancel";
+                code = @"UserCancel";
+                message = nil;
                 break;
 
             case LAErrorUserFallback:
-                errorReason = @"UserFallback";
+                code = @"UserFallback";
+                message = nil;
                 break;
 
             case LAErrorSystemCancel:
-                errorReason = @"SystemCancel";
+                code = @"SystemCancel";
+                message = nil;
                 break;
 
             case LAErrorPasscodeNotSet:
-                errorReason = @"PasscodeNotSet";
+                code = @"PasscodeNotSet";
+                message = nil;
                 break;
 
             case LAErrorTouchIDNotAvailable:
@@ -53,7 +58,8 @@ RCT_EXPORT_METHOD(isSensorAvailable: (RCTResponseSenderBlock)callback)
                 break;
 
             case LAErrorTouchIDLockout:
-                errorReason = @"AuthenticationLockout";
+                code = @"AuthenticationLockout";
+                message = nil;
                 break;
 
             default:
